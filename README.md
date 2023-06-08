@@ -259,7 +259,7 @@
 - authControllers.js
 - create functions
 ```js
-export { register, login, updateuser }
+export { register, login, updateUser }
 ```
 - return res.send('function name')
 - create <b>routes</b> folder
@@ -321,3 +321,99 @@ npm install express-async-errors
 ```
 - in server.js
 - import 'express-async-errors'
+- use throw Error('error') instead of next(error)
+
+#### Http Status code
+
+- constants for status codes
+- personal preference
+- provides consistency
+- less bugs
+- easier to read/manage
+- [http Status Codes](https://www.npmjs.com/package/http-status-codes)
+```sh
+npm install http-status-codes
+```
+- import/setup in authController and error-handler
+- setup defaultError
+
+#### Custom Errors
+
+#### Refractor Errors
+
+- create errors folder
+- create custom-api, bad-request, not-found, index.js files
+- add proper imports
+- setup index.js just like in the front-end
+- import {BadRequestError} in authController
+- gotcha "index.js"
+
+#### Hash Passwords
+
+- one way street, only compare hashed values
+- [bcrypt.js](https://www.npmjs.com/package/bcryptjs)
+```sh
+npm install bcryptjs
+```
+- import bcryptjs in User model
+- await getSalt(10)
+- await hash(password,salt)
+- await compare(requestPassword, currentPassword)
+- [mongoose middleware](https://mongoosejs.com/docs/middleware.html)
+- UserSchema.pre('save', async function(){"this" points back to UserSchema})
+
+#### Mongoose - Custom Instance Methods
+
+[Custom Instance Methods](https://mongoosejs.com/docs/guide.html#methods)
+
+- UserSchema.methods.createJWT = function(){console.log(this)}
+- register controller
+- right after User.create()
+- invoke user.createJWT()
+
+#### JWT
+
+- token
+- [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+```sh 
+npm install jsonwebtoken
+```
+- User Model
+- import jwt from 'jsonwebtoken'
+- jwt.sign(payload, secret, options)
+- createJWT
+```js 
+return jwt.sign({userId: this._id},'jwtSecret',{expressIn:'1d'})
+```
+
+#### JWT_SECRET and JWT_LIFETIME
+
+- [Keys Generator](https://www.allkeysgenerator.com/)
+- RESTART SERVER!!!
+
+#### Complete Register
+
+- password: {select:false}
+- complete response
+
+#### Concurrently 
+
+- front-end and backend (server)
+- run separate terminals
+- [concurrently](https://www.npmjs.com/package/concurrently)
+```sh
+npm install concurrently --save-dev
+```
+- package.json
+```js
+// --kill-others switch, all commands are killed if one dies
+// --prefix client-folder
+// cd client && npm start
+// escape quotes
+
+"scripts":{
+    "server":"nodemon server --ignore client"
+    "client":"npm start --prefix client"
+    "start":"concurrently --kill-others-on-fail \"npm run server"\ \"npm run client\""
+},
+```
