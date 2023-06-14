@@ -1,9 +1,10 @@
 import 'express-async-errors';
+import cors from 'cors'
 import express from 'express';
 const app = express();
 import dotenv from 'dotenv';
 dotenv.config();
-
+import morgan from 'morgan'
 // db abd authenticate user
 import connectDB from './db/connect.js';
 
@@ -15,14 +16,18 @@ import jobsRouter from './routes/jobsRoutes.js';
 import notFoundMiddleware from './middleware/not-found.js';
 import errorHandlerMiddleware from './middleware/error-handler.js';
 
+if(process.env.NODE_ENV !== 'production'){
+    app.use(morgan('dev'))
+}
+
 app.use(express.json());
-console.log('hello')
-console.log('hello')
-console.log('hello')
-console.log('hello')
-console.log('hello')
+
 app.get('/',(req, res) => {
-    res.send('Welcome!');
+    res.json({msg:'Welcome!'});
+});
+
+app.get('/api/v1',(req, res) => {
+    res.json({msg:'API'});
 });
 
 app.use('/api/v1/auth', authRouter);
