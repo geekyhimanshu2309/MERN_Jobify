@@ -947,3 +947,20 @@ const [showLogout, setShowLogout] = useState(false)
 
 #### Small Sidebar - Setup
 
+
+#### Nav Links Component
+
+- create NavLinks component
+- styles still set from Wrapper
+- also can setup in links.js, preference
+
+#### REACT ROUTER UPDATE !!!
+
+- [Stack Overflow](https://stackoverflow.com/questions/70644361/react-router-dom-v6-show-active-for-index-as-well-as-other-subroutes)
+
+#### Big Sidebar
+
+#### Postman - Set Token Programmatically
+
+- register and login routes
+- Tests
