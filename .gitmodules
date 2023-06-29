@@ -1,0 +1,6 @@
+[submodule "MERN_Jobify"]
+	path = MERN_Jobify
+	url = https://github.com/geekyhimanshu2309/MERN_Jobify.git
+[submodule "MERN_Jobify_Client"]
+	path = MERN_Jobify_Client
+	url = https://github.com/geekyhimanshu2309/MERN_Jobify_Client.git
