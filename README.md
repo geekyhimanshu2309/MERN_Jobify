@@ -964,3 +964,175 @@ const [showLogout, setShowLogout] = useState(false)
 
 - register and login routes
 - Tests
+
+#### Auth Middleware
+
+#### Modified Paths
+
+- user.save() vs User.findOneAndUpdate
+
+#### Profile Page
+
+#### Axios - Global Setup
+In current axios version,
+common property returns undefined,
+so we don't use it anymore!!!
+
+
+#### Axios - SetupInstance
+
+AppContext.js
+
+#### Axios - Interceptors
+
+- will use instance, but can use axios instead 
+
+#### Update User
+
+#### Job Model
+
+- Job Model
+
+#### Job State Values
+
+#### Select Inputs
+
+#### FormRowSelect
+
+- create FormRowSelect in components
+- setup import/export
+
+#### Change State Values With Handle Change
+
+- [JS Nuggets Dynamic Object Keys](https://youtu.be/_qxCYtWm0tw)
+
+#### Get All Jobs
+
+#### Jobs State Values
+
+#### Get All Jobs Request
+
+#### AllJobs Page Setup
+
+- create 
+- SearchContainer export
+- JobsContainer export
+- Job
+- JobInfo
+
+#### SetEditJob
+
+#### Alternative Approach
+
+- optional
+- multiple approaches
+- different setups
+- course Q&A
+
+# check permissions
+- utils folder
+- checkPermissions.js
+- import in jobsController.js
+- refractor CustomError in jobsController.js
+
+#### Delete Job - Front End
+
+#### Create More Jobs
+
+- [Mockaroo](https:///wwww.mockaroo.com/)
+- setup mock-data.json in the root
+
+#### Populate Database
+
+- create populate.js in the root
+
+#### Show stats - Structure
+
+- aggregation pipeline
+- step by step
+- [Aggregation Pipeline](https://docs.mongodb.com/manual/core/aggregation-pipeline)
+
+#### Show stats - Object Setup
+
+- [Reduce Basics](https://youtu.be/3WkW9nrS2mw)
+- [Reduce Object Example](https://youtu.bs/5BFkp8JjLEY)
+
+#### Show Stats - Function Setup
+
+#### Stats Page - Structure
+
+- components
+- StatsContainer.js
+- ChartsContainer.js
+- StatsItem.js
+- Simple Return
+- import/export index.js
+
+#### Refractor Data
+
+- install moment.js on the SERVER
+- npm install moment
+
+#### Charts Container
+
+- BarChart.js
+- AreaChart.js
+
+#### Recharts Library
+
+- install in the Client!!!
+[Recharts](https://recharts.org)
+- npm install recharts --force
+
+#### Bar Chart
+
+#### Get All Jobs - Initial Setup
+
+- jobsController.js
+
+#### Clear Filters
+
+#### Refractor Get All Jobs
+
+#### Button Container
+
+- [Array.from] (https://youtu.be/zg1Bv4xubwo)
+
+
+#### Change Page
+
+#### Prev and Next Page
+
+#### Production Setup - Fix Warnings and logoutUser
+
+- getJobs, deleteJob, showStats - invoke logoutUser()
+- fix warnings
+
+```sh
+// eslint-disable-next-line
+```
+
+#### Production Setup - Build Front-End Application
+
+- create front-end production application
+
+#### Security Packages
+
+- remove log in the error-handler
+- [helmet](https://www.npmjs.com/package/helmet)
+  Helmet helps you secure your Express apps by setting various HTTP headers
+- [xss-clear](https://www.npmjs.com/package/xss-clean)
+  Node.js Connect middleware to sanitize user input coming from POST body, GET queries, and url params.
+- [express-mongo-sanitize](https://www.npmjs.com/package/express-mongo-sanitize)
+  Sanitizes user-supplied data to prevent MongoDB Operator Injection.
+- [express-rate-limit](https://www.npmjs.com/package/express-rate-limit)
+  Basic rate-limiting middleware for Express.
+
+```sh
+npm install helmet xss-clean express-mongo-sanitize express-rate-limit
+```
+
+#### prepare for Deployment
+
+- in client remove build and node_modules
+- in server remove node_modules
